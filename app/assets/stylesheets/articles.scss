@@ -1,34 +1,107 @@
 
 header {
-  height: 70px;
+  height: 80px;
   background-color: white;
+  width: 100%;
+  position: fixed;
 }
 header h1 {
+  // text-align: center;
+  padding-left: 520px;
+  margin: 5px auto;
+  font-size: 30px;
+  .btn{
+    float: right;
+  }
+}
+
+header .title{
   color: black;
-  text-align: center;
-  margin: 5px;
-  font-size: 30px
 }
 
 header hr {
   margin: 5px;
 }
 
+.title{
+  text-align: center;
+}
+
 .contents {
-  height: 900px;
-  padding-top: 15px;
+  height: 800px;
+  padding-top: 95px;
   background-color: #EEEEEE;
 }
 
 
 .middle_content {
-  height: 880px;
+  height: 680px;
   width: 550px;
   background-color: white;
   margin: 0 auto;
 }
 
 p {
-  color: red;
+  color: black;
 }
+
+.middle_content p .top_text {
+  font-size: 35px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.nickname_input {
+  margin-left: 10px;
+}
+
+.image_url_input {
+  margin-left: 10px;
+}
+
+.job_input {
+  margin-left: 10px;
+}
+
+.content_input {
+  margin-left: 10px;
+}
+
+.middle_content p {
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+h3 {
+  text-align: center;
+  padding-top: 25px;
+  font-weight: bold
+}
+
+.submit_button {
+  padding-left: 10px;
+  margin: 15px 0;
+
+}
+
+.contents2 {
+  height: 800px;
+  padding-top: 95px;
+  background-color: #EEEEEE;
+}
+
+.middle_content2 {
+  height: 580px;
+  width: 350px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.middle_content2 p {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
 

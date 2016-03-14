@@ -8,13 +8,16 @@
 </head>
 <body>
  <header>
-   <div>
-   <h1>Jobs</h1>
-   <hr>
-   </div>
+  <h1><%= link_to 'Jobs','/articles', :class => 'title' %>
+
+    <a class="btn btn-default" href="/articles/new" role="button">投稿する</a>
+  </h1>
+  <hr>
  </header>
 
 <%= yield %>
 
 </body>
+<footer>
+</footer>
 </html>

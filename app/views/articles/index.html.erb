@@ -1,6 +1,10 @@
 
 <div class='contents'>
   <div class='middle_content'>
-  <p>Hello World</p>
+    <% @articles.each do |article| %>
+       <%= article.nickname %>
+       <%= article.job %>
+       <%= article.content%>
+    <% end %>
   </div>
 </div>
