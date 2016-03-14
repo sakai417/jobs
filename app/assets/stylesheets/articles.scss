@@ -1,3 +1,34 @@
-body {
+
+header {
+  height: 70px;
+  background-color: white;
+}
+header h1 {
+  color: black;
+  text-align: center;
+  margin: 5px;
+  font-size: 30px
+}
+
+header hr {
+  margin: 5px;
+}
+
+.contents {
+  height: 900px;
+  padding-top: 15px;
+  background-color: #EEEEEE;
+}
+
+
+.middle_content {
+  height: 880px;
+  width: 550px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+p {
   color: red;
 }
+
