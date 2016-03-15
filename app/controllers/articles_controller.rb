@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
   private
   def create_params
-    params.require(:article).permit(:nickname, :job, :content)
+    params.require(:article).permit(:nickname, :job, :content, :image_url)
   end
 
 end
