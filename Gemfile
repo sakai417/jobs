@@ -46,3 +46,6 @@ group :development do
 end
 gem 'pry-rails'
 gem 'paperclip'
+gem 'kaminari'
+gem 'devise'
+gem "twitter-bootstrap-rails"
