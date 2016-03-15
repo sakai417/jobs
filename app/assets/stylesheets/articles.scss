@@ -1,10 +1,30 @@
 
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.clearfix:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+
 header {
   height: 80px;
   background-color: white;
   width: 100%;
   position: fixed;
 }
+
+
 header h1 {
   // text-align: center;
   padding-left: 520px;
@@ -28,22 +48,24 @@ header hr {
 }
 
 .contents {
-  height: 800px;
+  // height: 800px;
   padding: 95px 0 30px 0;
   background-color: #EEEEEE;
 }
 
 
 .middle_content {
-  height: 680px;
+  // height: 680px;
+    border: solid #bbb 1px;
+  border-radius: 5px;
   width: 550px;
   background-color: white;
   margin: 0 auto;
 }
 
-p {
-  color: black;
-}
+// p {
+//   color: black;
+// }
 
 .middle_content p .top_text {
   font-size: 35px;
@@ -92,6 +114,8 @@ h3 {
 }
 
 .middle_content2 {
+  // border: solid #bbb 1px;
+  // border-radius: 10px;
   height: 580px;
   width: 350px;
   background-color: white;
@@ -104,4 +128,42 @@ h3 {
   font-size: 20px;
 }
 
+.sample_image {
+  margin: 10px 10px 0 10px;
+  float: left;
+  height: 60px;
+  border: solid #bbb 2px;
+  border-radius: 8px;
+}
+
+.message_box {
+  border-bottom: solid #bbb 1px;
+  min-height: 200px;
+}
+
+.message {
+  margin-top: 0px;
+  float: left;
+  width: 300px;
+}
+
+.name {
+  margin-top: 0;
+  color: green;
+
+}
+
+.job {
+  margin-top: 0;
+}
+
+.text {
+
+}
+
+
+footer {
+  height: 40px;
+
+}
 
