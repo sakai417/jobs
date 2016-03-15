@@ -12,6 +12,11 @@ class ArticlesController < ApplicationController
     Article.create(create_params)
   end
 
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy
+  end
+
   private
   def create_params
     params.require(:article).permit(:nickname, :job, :content, :image_url)
