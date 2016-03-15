@@ -4,17 +4,20 @@
     <% @articles.each do |article| %>
       <div class='message_box clearfix'>
         <%= image_tag 'bg.jpg', class: 'sample_image' %>
-        <div class='message'>
-        <p class="name">
+       <ul class='message'>
+        <li class="name">
           <%= article.nickname %>
-        </p>
-        <p class='job'>
-       <%= article.job %>
-        </p>
-        <p class='text'>
-       <%= article.content%>
-        </p>
-       </div>
+        </li>
+        <li class='job'>
+          <%= article.job %>
+        </li>
+        <li class='title'>
+        <a href='/articles/<%= article.id %>'><%= article.title %></a>
+        </li><br>
+        <li class='text'>
+          <%= article.content%>
+        </li>
+       </ul>
      </div>
     <% end %>
   </div>

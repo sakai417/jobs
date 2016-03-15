@@ -35,7 +35,7 @@ header h1 {
   }
 }
 
-header .title{
+header .page_title{
   color: black;
 }
 
@@ -43,7 +43,7 @@ header hr {
   margin: 5px;
 }
 
-.title{
+.page_title{
   text-align: center;
 }
 
@@ -56,7 +56,8 @@ header hr {
 
 .middle_content {
   // height: 680px;
-    border: solid #bbb 1px;
+  min-height: 700px;
+  border: solid #bbb 1px;
   border-radius: 5px;
   width: 550px;
   background-color: white;
@@ -82,6 +83,10 @@ header hr {
 }
 
 .job_input {
+  margin-left: 10px;
+}
+
+.title_input {
   margin-left: 10px;
 }
 
@@ -114,9 +119,9 @@ h3 {
 }
 
 .middle_content2 {
-  // border: solid #bbb 1px;
-  // border-radius: 10px;
-  height: 580px;
+  border: solid #bbb 1px;
+  border-radius: 10px;
+  height: 300px;
   width: 350px;
   background-color: white;
   margin: 0 auto;
@@ -126,6 +131,10 @@ h3 {
   padding-top: 40px;
   text-align: center;
   font-size: 20px;
+}
+
+.go_to_top {
+  margin-right: 0;
 }
 
 .sample_image {
@@ -142,25 +151,57 @@ h3 {
 }
 
 .message {
-  margin-top: 0px;
+  margin-top: 10px;
   float: left;
-  width: 300px;
+  width: 420px;
+  list-style: none;
+}
+.message2 {
+  margin-top: 10px;
+  float: left;
+  width: 500px;
+  list-style: none;
 }
 
 .name {
-  margin-top: 0;
-  color: green;
+font-family: "Times New Roman";
+font-style: italic;
+font-weight: bold;
+
 
 }
 
 .job {
-  margin-top: 0;
+  font-family: "Times New Roman";
+  font-style: italic;
 }
 
 .text {
 
 }
 
+
+.sample_image2 {
+  width: 550px;
+
+}
+
+.title_show {
+}
+
+.delete_button {
+  float: right;
+}
+.update_button {
+  float: right;
+  margin-right: 7px
+}
+
+.h4 {
+  text-align: center;
+  font-family: "Times New Roman";
+  font-weight: bold;
+}
 
 footer {
   height: 40px;
