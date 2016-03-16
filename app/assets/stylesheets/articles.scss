@@ -27,7 +27,7 @@ header {
 
 header h1 {
   // text-align: center;
-  padding-left: 520px;
+  padding-left: 540px;
   margin: 5px auto;
   font-size: 30px;
   .btn{
@@ -58,7 +58,7 @@ header hr {
   // height: 680px;
   min-height: 700px;
   border: solid #bbb 1px;
-  border-radius: 5px;
+  border-radius: 7px;
   width: 550px;
   background-color: white;
   margin: 0 auto;
@@ -93,6 +93,9 @@ header hr {
 .content_input {
   margin-left: 10px;
 }
+.submit_button {
+  margin-left: 50px;
+}
 
 .middle_content p {
   margin-left: 10px;
@@ -121,7 +124,7 @@ h3 {
 .middle_content2 {
   border: solid #bbb 1px;
   border-radius: 10px;
-  height: 300px;
+  height: 600px;
   width: 350px;
   background-color: white;
   margin: 0 auto;
@@ -138,9 +141,9 @@ h3 {
 }
 
 .sample_image {
-  margin: 10px 10px 0 10px;
+  margin: 10px 0 10px 0 10px;
   float: left;
-  height: 60px;
+  height: 40px;
   border: solid #bbb 2px;
   border-radius: 8px;
 }
@@ -148,6 +151,7 @@ h3 {
 .message_box {
   border-bottom: solid #bbb 1px;
   min-height: 200px;
+  float: left;
 }
 
 .message {
@@ -201,6 +205,37 @@ font-weight: bold;
   text-align: center;
   font-family: "Times New Roman";
   font-weight: bold;
+}
+
+.middle_content h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.field, .actions {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.actions{
+  margin-bottom: 80px;
+}
+
+.actions1 {
+  text-align: right;
+  margin-right: 10px;
+}
+
+h5 {
+  text-align: center;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.avatar_input {
+
+  margin-left: 170px;
 }
 
 footer {

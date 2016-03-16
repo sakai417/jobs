@@ -2,19 +2,25 @@
 <html>
 <head>
   <title>Jobs</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
  <header>
-  <h1><%= link_to 'Jobs','/articles', :class => 'page_title' %>
-
+   <h1><%= link_to 'Jobs','/articles', :class => 'page_title' %>
+   <% if user_signed_in? %>
+    <a class="btn btn-default" href="/users/show" role="button">マイページへ</a>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-default" %>
     <a class="btn btn-default" href="/articles/new" role="button">投稿する</a>
+    <% else %>
+    <a class="btn btn-default" href="/users/sign_in" role="button">ログインする</a>
+    <a class="btn btn-default" href="/users/sign_up" role="button">新規アカウント作成</a>
+    <% end %>
   </h1>
   <hr>
  </header>
-    <%= bootstrap_flash %>
+
     <%= yield %>
 
 </body>

@@ -3,10 +3,12 @@
   <div class='middle_content'>
     <% @articles.each do |article| %>
       <div class='message_box clearfix'>
-        <%= image_tag 'bg.jpg', class: 'sample_image' %>
+      <div class='sample_image'>
+        <%= image_tag article.user.avatar %>
+      </div>
        <ul class='message'>
         <li class="name">
-          <%= article.nickname %>
+          <%= article.user.nickname %>
         </li>
         <li class='job'>
           <%= article.job %>

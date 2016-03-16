@@ -3,7 +3,7 @@
     <%= image_tag 'bg.jpg', class: 'sample_image2' %>
       <ul class='message2'>
         <li class="name">
-          <%= @article.nickname %>
+          <%= @article.user.nickname %>
           <%= link_to '削除', "/articles/#{@article.id}", :method => :delete, class: 'delete_button' %>
           <%= link_to '編集', "/articles/#{@article.id}/edit", :method => :get, class: 'update_button' %>
 
