@@ -3,8 +3,8 @@
   <div class='middle_content'>
     <% @articles.each do |article| %>
       <div class='message_box clearfix'>
-      <div class='sample_image'>
-        <%= image_tag article.user.avatar %>
+      <div>
+        <%= image_tag article.user.avatar, class: 'sample_image' %>
       </div>
        <ul class='message'>
         <li class="name">
@@ -22,6 +22,9 @@
        </ul>
      </div>
     <% end %>
+    <!-- <div class='page'> -->
     <%= paginate(@articles) %>
+      
+    <!-- </div> -->
   </div>
 </div>
