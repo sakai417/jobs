@@ -18,7 +18,7 @@ h1,h2,h3,h4,h5,h6,p {
 
 
 header {
-  height: 80px;
+  height: 90px;
   background-color: white;
   width: 100%;
   position: fixed;
@@ -26,13 +26,17 @@ header {
 
 
 header h1 {
-  // text-align: center;
-  padding-left: 540px;
-  margin: 5px auto;
+  width: 300px;
+  height: 45px;
+  text-align: center;
+  margin: 0 auto;
   font-size: 30px;
-  .btn{
-    float: right;
-  }
+
+}
+
+.header_nav {
+  float: right;
+  margin-right: 4px;
 }
 
 header .page_title{
@@ -48,15 +52,15 @@ header hr {
 }
 
 .contents {
-  // height: 800px;
-  padding: 95px 0 30px 0;
+  
+  padding: 102px 0 30px 0;
   background-color: #EEEEEE;
 }
 
 
 .middle_content {
   // height: 680px;
-
+  min-height: 600px;
   border: solid #bbb 1px;
   border-radius: 9px;
   width: 550px;
@@ -117,7 +121,7 @@ h3 {
 
 .contents2 {
   height: 800px;
-  padding-top: 95px;
+  padding-top: 102px;
   background-color: #EEEEEE;
 }
 
@@ -227,10 +231,10 @@ font-weight: bold;
 }
 
 h5 {
-  text-align: center;
+  padding-left: 110px;
   font-family: "Times New Roman";
   font-size: 20px;
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .avatar_input {
@@ -240,6 +244,22 @@ h5 {
 
 .pagination {
   margin-left: 450px;
+}
+
+.message_box3 {
+  height: 64px;
+}
+
+.hr1 {
+  border: 0;
+  margin-top: 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.hr2 {
+  border: 0;
+  margin-top: 0;
+  border-top: 1px solid #bbb;
 }
 
 footer {

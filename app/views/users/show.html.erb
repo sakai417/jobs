@@ -1,5 +1,34 @@
 <div class='contents'>
   <div class='middle_content'>
-  <h5><%= @user.nickname %></h5>
+  <%= image_tag @user.avatar, class: 'sample_image' %>
+  <div class='message_box3'>
+      <ul class='message'>
+        <li class="name">
+         <%= @user.nickname %>
+        </li>
+        <li class='job'>
+          <%= @user.job %>
+        </li>
+      </ul>
+    </div>
+    <hr class='hr2'>
+
+      <ul class='message'>
+        <% @articles.each do |article| %>
+        <li class="name">
+         <%= @user.nickname %>
+        </li>
+        <li class='job'>
+          <%= article.job %>
+        </li>
+        
+        <li class='title'>
+        <a href='/articles/<%= article.id %>'><%= article.title %></a>
+        </li><br>
+        <li class='text'>
+          <%= article.content%>
+        </li>
+        <% end %>
+      </ul>
   </div>
 </div>

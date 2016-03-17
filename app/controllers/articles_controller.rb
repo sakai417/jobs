@@ -31,11 +31,11 @@ class ArticlesController < ApplicationController
 
   private
   def create_params
-    params.require(:article).permit(:job, :content, :image_url, :title).merge(user_id: current_user.id)
+    params.require(:article).permit(:content, :image_url, :title).merge(user_id: current_user.id)
   end
 
   def update_params
-    params.require(:article).permit(:job, :content, :image_url, :title)
+    params.require(:article).permit(:content, :image_url, :title)
   end
 
 end
