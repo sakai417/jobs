@@ -7,11 +7,9 @@
        <%= f.text_field :title, class: 'title_input', placeholder: @article.title, size: 35 %>
 
       <p>画像</p>
-      <%= f.text_field :image_url, class: 'image_url_input', placeholder: "画像URLを貼ってください", size: 35 %>
+      <%= f.file_field :image %>
 
-      <p>ご職業</p>
-      <%= f.text_field :job, class: 'job_input', placeholder: @article.job, size: 35 %>
-
+ 
       
       <p>本文</p>
       <%= f.text_area :content, placeholder: @article.content, size: "70x14", class: "content_input" %>

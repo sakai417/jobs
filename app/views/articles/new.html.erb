@@ -5,11 +5,9 @@
     <%= form_for(@article) do |f|%>
        <p>タイトル</p>
        <%= f.text_field :title, class: 'title_input', placeholder: 'タイトルを入力してください', size: 35 %>
-
-
       <p>画像</p>
-      <%= f.text_field :image_url, class: 'image_url_input', placeholder: '画像URLを入力してください', size: 35 %>
-
+      <%= f.file_field :image_url %>
+      
 
       <p>本文</p>
       <%= f.text_area :content, placeholder: '本文を入力してください', size: "70x14", class: "content_input" %>

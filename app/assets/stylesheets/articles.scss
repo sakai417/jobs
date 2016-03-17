@@ -37,6 +37,7 @@ header h1 {
 .header_nav {
   float: right;
   margin-right: 4px;
+  margin-top: 5px;
 }
 
 header .page_title{
@@ -155,15 +156,28 @@ h3 {
 .message_box {
   border-bottom: solid #bbb 1px;
   min-height: 200px;
+}
 
+
+.message_box4 {
+   border-bottom: solid #bbb 1px;
+  min-height: 200px;
 }
 
 .message {
   margin-top: 10px;
   float: left;
-  width: 420px;
+  width: 400px;
   list-style: none;
 }
+
+.message1 {
+  margin-top: 10px;
+  float: left;
+  width: 500px;
+  list-style: none;
+}
+
 .message2 {
   margin-top: 10px;
 
@@ -190,8 +204,11 @@ font-weight: bold;
 
 
 .sample_image2 {
-  width: 550px;
 
+  width: 275px;
+  height: 250px;
+  border: 1px solid #bbb;
+  border-radius: 8px
 }
 
 .title_show {
@@ -253,6 +270,7 @@ h5 {
 .hr1 {
   border: 0;
   margin-top: 0;
+  margin-bottom: 0;
   border-bottom: 1px solid #bbb;
 }
 
@@ -261,6 +279,7 @@ h5 {
   margin-top: 0;
   border-top: 1px solid #bbb;
 }
+
 
 footer {
   height: 40px;

@@ -1,17 +1,17 @@
 <div class='contents'>
   <div class='middle_content'>
-
-    <%= image_tag 'bg.jpg', class: 'sample_image2' %>
-
+    <%= image_tag @article.image_url.url, class: 'sample_image2' %>
+    <hr class='hr1'>
+    <div class='message_box5 clearfix'>
+        <%= image_tag @article.user.avatar, class: 'sample_image' %>
         <ul class='message2'>
         <li class="name">
           <%= @article.user.nickname %>
           <%= link_to '削除', "/articles/#{@article.id}", :method => :delete, class: 'delete_button' %>
           <%= link_to '編集', "/articles/#{@article.id}/edit", :method => :get, class: 'update_button' %>
-
         </li>
         <li class='job'>
-          <%= @article.job %>
+          <%= @article.user.job %>
         </li>
         <li class='title_show'>
           <<%= @article.title %>>
@@ -20,6 +20,7 @@
           <%= @article.content%>
         </li>
      </ul>
+   </div>
 
    </div>
   </div>

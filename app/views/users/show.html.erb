@@ -1,5 +1,5 @@
 <div class='contents'>
-  <div class='middle_content'>
+  <div class='middle_content clearfix'>
   <%= image_tag @user.avatar, class: 'sample_image' %>
   <div class='message_box3'>
       <ul class='message'>
@@ -13,13 +13,15 @@
     </div>
     <hr class='hr2'>
 
-      <ul class='message'>
+
+      <ul class='message1'>
         <% @articles.each do |article| %>
+        <div class='message_box4'>
         <li class="name">
          <%= @user.nickname %>
         </li>
         <li class='job'>
-          <%= article.job %>
+          <%= article.user.job %>
         </li>
         
         <li class='title'>
@@ -28,7 +30,9 @@
         <li class='text'>
           <%= article.content%>
         </li>
+      </div>
         <% end %>
       </ul>
+
   </div>
 </div>

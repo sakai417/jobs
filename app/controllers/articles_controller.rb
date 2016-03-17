@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def create
     Article.create(create_params)
+    
   end
   def show
     @article = Article.find(params[:id])
@@ -31,7 +32,10 @@ class ArticlesController < ApplicationController
 
   private
   def create_params
+
     params.require(:article).permit(:content, :image_url, :title).merge(user_id: current_user.id)
+
+
   end
 
   def update_params

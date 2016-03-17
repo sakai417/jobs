@@ -49,3 +49,5 @@ gem 'paperclip'
 gem 'kaminari'
 gem 'devise'
 gem "twitter-bootstrap-rails"
+gem 'carrierwave'
+gem 'fog'
