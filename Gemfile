@@ -53,6 +53,7 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave'
 gem 'fog'
 gem 'config'
+gem 'aws-sdk'
 
 group :production, :standing do
   gem 'rails_12factor'
