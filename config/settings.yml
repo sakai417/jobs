@@ -1,3 +1,4 @@
 jobs:
   aws_access_key_id: 'AKIAJYY4HLZV2SF4EREA'
   aws_secret_access_key: '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'
+  region: 'us-east-1'
