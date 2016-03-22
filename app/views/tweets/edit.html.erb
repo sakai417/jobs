@@ -1,0 +1,19 @@
+<% provide :title, "編集する" %>
+
+<div class='contents'>
+  <div class='middle_content'>
+    <h3>編集しよう</h3>
+
+    <%= form_for(@tweet) do |f|%>
+
+      <p>タイトル</p>
+       <%= f.text_field :title, class: 'title_input', placeholder: @tweet.title, size: 35 %>
+
+      <p>画像</p>
+      <%= f.file_field :image_url %>
+      <p>本文</p>
+      <%= f.text_area :content, placeholder: @tweet.content, size: "70x14", class: "content_input" %>
+      <%= f.submit "編集する", class: 'submit_button' %>
+
+      <% end %>
+  </div>
