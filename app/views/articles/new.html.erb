@@ -1,17 +1,27 @@
+<% provide :title, "投稿ページ" %>
 
 <div class='contents'>
   <div class='middle_content'>
-    <h3>投稿してみよう</h3>
+    <h3>今までの仕事について</h3>
+    <div class='explanation'>
+    <span>この記事は１人が１つだけつくることのできる記事です。<br>編集を繰り返しながら完成させてください。</span>
+  </div>
     <%= form_for(@article) do |f|%>
        <p>タイトル</p>
-       <%= f.text_field :title, class: 'title_input', placeholder: 'タイトルを入力してください', size: 35 %>
+       <%= f.text_field :title, class: 'title_input', placeholder: 'ex) 波乱万丈な3年間', size: 35 %>
       <p>画像</p>
       <%= f.file_field :image_url %>
-      
 
       <p>本文</p>
-      <%= f.text_area :content, placeholder: '本文を入力してください', size: "70x14", class: "content_input" %>
-      <%= f.submit "送信する", class: 'submit_button' %>
+      <%= f.text_area :content, placeholder: 
+      '　ex) 初めまして◯◯です。
+      私はプログラマーとしてシステム構築をしています。
+      ◯◯大学を卒業した後、銀行員として働いていましたが、
+      お金の取り扱いや営業職が性にあわず1年間でやめてしまいました。
+      話はさかのぼりますが、私は学生時代に海外交流サークルに所属していて、
+      海外に興味があり外国で働きたいという思いがありました。
+      そのため１年間ベトナムに渡り………', size: "70x14", class: "content_input" %>
+      <%= f.submit "投稿する", class: 'submit_button' %>
 
       <% end %>
   </div>

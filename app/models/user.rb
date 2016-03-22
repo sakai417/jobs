@@ -13,5 +13,7 @@ class User < ActiveRecord::Base
   validates :nickname, :job, presence: true
 
   has_many :articles
+  has_many :tweets
+  has_many :comments
 
 end

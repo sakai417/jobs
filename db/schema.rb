@@ -20,7 +20,24 @@ ActiveRecord::Schema.define(version: 20160319105944) do
     t.datetime "updated_at"
     t.string   "title",      limit: 255
     t.integer  "user_id",    limit: 4
-    t.string   "image",      limit: 255
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content",          limit: 65535
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "commentable_id",   limit: 4
+    t.string   "commentable_type", limit: 255
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.text     "image_url",  limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "comments", force: :cascade do |t|

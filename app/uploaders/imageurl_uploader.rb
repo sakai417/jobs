@@ -4,7 +4,7 @@
 class ImageurlUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  # include CarrierWave::RMagickP
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
