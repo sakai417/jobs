@@ -1,0 +1,44 @@
+<% provide :title, @tweet.title %>
+
+<div class='contents'>
+  <div class='middle_content'>
+
+
+
+    <div class='message_box5 clearfix'>
+        <%= image_tag @tweet.user.avatar, class: 'sample_image' %>
+        <ul class='message2'>
+        <li class="name3">
+          <%= @tweet.user.nickname %>
+        </li>
+        <li class='job3'>
+          <%= @tweet.user.job %>
+        </li>
+
+          <% unless @tweet.image_url.blank? %>
+    <%= image_tag @tweet.image_url.url, class: 'sample_image2' %>
+
+    <% end %>
+        <li class='title_show'>
+          <%= @tweet.title %>
+        </li><br><br>
+        <li class='text'>
+          <%= @tweet.content%>
+        </li>
+     </ul>
+   </div>
+  <%= render 'shared/comment'%>
+         <div class='comment_form'>
+      <%= form_for(@comment) do |f| %>
+        <%= f.text_area :content, placeholder: 
+        'コメントを書く', size: "57x2", class: "content_input" %>
+        <%= f.hidden_field :commentable_id, value: @tweet.id %>
+        <%= f.hidden_field :commentable_type, value: "Tweet" %>
+
+        <%= f.submit "コメントする", class: 'submit_button1' %>
+        <% end %>
+    </div>
+
+   </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<% provide :title, "ーー”仕事”を知る、知らせる" %>
+
+<div class='contents'>
+    <%= render 'shared/tweet_to' %>
+  <div class='middle_content'>
+    <% @tweets.each do |tweet| %>
+      <div class='message_box6 clearfix'>
+      <div class='plofile clearfix'>
+        <%= image_tag tweet.user.avatar, class: 'sample_image' %>
+       <ul class='message'>
+        <li class="name2">
+            <a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %>
+
+        </li>
+        <li class='job2'>
+          <%= tweet.user.job %>
+        </li>
+       </ul>
+     </div>
+       <ul class='message_bottom'>
+        <li class='title2'>
+        <a href='/tweets/<%= tweet.id %>'><%= tweet.title %></a>
+        </li><br>
+        <li class='text'>
+          <%= tweet.content%>
+        </li>
+       </ul>
+     </div>
+      <div class='comment_form'>
+        <%= form_for(@comment) do |f| %>
+          <%= f.text_area :content, placeholder: 'コメントを書く', size: "57x2", class: "content_input" %>
+        <%= f.hidden_field :commentable_id, value: tweet.id %>
+        <%= f.hidden_field :commentable_type, value: "Tweet" %>
+          <%= f.submit "コメントする", class: 'submit_button' %>
+        <% end %>
+      </div>
+
+    <% end %>
+    <!-- <div class='page'> -->
+    <%= paginate(@tweets) %>
+      
+    <!-- </div> -->
+  </div>
+</div>

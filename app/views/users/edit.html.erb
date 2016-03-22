@@ -1,0 +1,27 @@
+<% provide :title, "マイページの編集" %>
+
+<div class='contents'>
+  <div class='middle_content'>
+
+<h2>マイページの編集</h2>
+<%= form_for current_user do |f| %>
+  <div class='field'>
+    <%= f.label :ニックネーム（必須）（変更できます） %><br />
+    <%= f.text_field :nickname, placeholder: @user.nickname, size: 30 %>
+        </div>
+  <div class='field'>
+    <%= f.label :職業（必須）（変更できます） %><br />
+    <%= f.text_field :job, placeholder: @user.job, size: 30 %>
+        </div>
+    <div class="avatar_input">
+    <%= f.label :アイコン画像（変更できます） %><br />
+    <%= f.file_field :avatar %>
+    </div>
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+
+  </div>
+  </div>
