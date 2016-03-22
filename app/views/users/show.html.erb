@@ -1,7 +1,17 @@
+<% provide :title, @user.nickname + "さんのマイページ" %>
 <div class='contents'>
+
+ <% if user_signed_in? && @user.id == current_user.id %>
+   <% unless @articles.exists? %>
+    <%= render 'shared/article_to' %>
+    <% end %>
+    <%= render 'shared/tweet_to' %>
+  <%= render 'shared/mail_and_edit' %>
+  <% end %>
+
   <div class='middle_content clearfix'>
   <%= image_tag @user.avatar, class: 'sample_image' %>
-  <div class='message_box3'>
+    <div class='message_box3'>
       <ul class='message'>
         <li class="name">
          <%= @user.nickname %>
@@ -13,26 +23,31 @@
     </div>
     <hr class='hr2'>
 
-
-      <ul class='message1'>
-        <% @articles.each do |article| %>
+    <ul class='message1'>
+      <% @articles.each do |article| %>
         <div class='message_box4'>
-        <li class="name">
-         <%= @user.nickname %>
-        </li>
-        <li class='job'>
-          <%= article.user.job %>
-        </li>
-        
-        <li class='title'>
+        <li class='title2'>
         <a href='/articles/<%= article.id %>'><%= article.title %></a>
         </li><br>
         <li class='text'>
           <%= article.content%>
         </li>
-      </div>
-        <% end %>
-      </ul>
+       </div>
+      <% end %>
+    </ul>
+
+       <ul class='message1'>
+      <% @tweets.each do |tweet| %>
+        <div class='message_box4'>
+        <li class='title2'>
+        <a href='/tweets/<%= tweet.id %>'><%= tweet.title %></a>
+        </li><br>
+        <li class='text'>
+          <%= tweet.content%>
+        </li>
+       </div>
+      <% end %>
+    </ul>
 
   </div>
 </div>

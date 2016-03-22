@@ -1,19 +1,26 @@
-
+<% provide :title, "ーー”仕事”を知る、知らせる" %>
 <div class='contents'>
+   <% if user_signed_in? && current_user.articles.blank? %>
+    <%= render 'shared/article_to' %>
+    <% end %>
   <div class='middle_content'>
     <% @articles.each do |article| %>
       <div class='message_box clearfix'>
-      <div>
-        <%= image_tag article.user.avatar, class: 'sample_image' %>
-      </div>
-       <ul class='message'>
-        <li class="name">
-          <%= article.user.nickname %>
-        </li>
-        <li class='job'>
-          <%= article.user.job %>
-        </li>
-        <li class='title'>
+        <div class='plofile clearfix'>
+          <%= image_tag article.user.avatar, class: 'sample_image' %>
+
+         <ul class='message'>
+          <li class="name2">
+            <a href="/users/<%= article.user.id %>"><%= article.user.nickname %></a>
+          </li>
+
+          <li class='job2'>
+            <%= article.user.job %>
+          </li>
+        </ul>
+        </div>
+       <ul class='message_bottom'>
+        <li class='title2'>
         <a href='/articles/<%= article.id %>'><%= article.title %></a>
         </li><br>
         <li class='text'>
@@ -21,10 +28,19 @@
         </li>
        </ul>
      </div>
+    <% if user_signed_in? %>
+    <div class='comment_form'>
+      <%= form_for(@comment) do |f| %>
+        <%= f.text_area :content, placeholder: 
+        'コメントを書く', size: "57x2", class: "content_input" %>
+        <%= f.hidden_field :commentable_id, value: article.id %>
+        <%= f.hidden_field :commentable_type, value: "Article" %>
+
+        <%= f.submit "コメントする", class: 'submit_button1' %>
+        <% end %>
+    </div>
+     <% end %>
     <% end %>
-    <!-- <div class='page'> -->
     <%= paginate(@articles) %>
-      
-    <!-- </div> -->
   </div>
 </div>
