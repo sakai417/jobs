@@ -3,9 +3,8 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :redirect, only: :edit
   def index
-    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(12)
    @comment = Comment.new
-    
   end
 
   def new
@@ -14,6 +13,7 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(create_params)
+    redirect_to "/tweets"
   end
 
   def show
@@ -25,6 +25,7 @@ class TweetsController < ApplicationController
   def destroy
    tweet = Tweet.find(params[:id])
    tweet.destroy
+   redirect_to "/tweets"
   end
 
   def edit
@@ -34,6 +35,7 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(update_params)
+   redirect_to "/tweets"
   end
 
   def redirect

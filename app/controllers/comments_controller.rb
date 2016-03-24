@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
-  def create
 
+  def create
     Comment.create(create_params)
   end
 

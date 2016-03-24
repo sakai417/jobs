@@ -3,6 +3,18 @@
    <% if user_signed_in? && current_user.articles.blank? %>
     <%= render 'shared/article_to' %>
     <% end %>
+   <% if user_signed_in? && current_user.articles.exists? %>
+     <div class='top_content'>
+  <div class='article_btn'>
+    <%= link_to '記事を編集して充実させましょう', "/articles/#{@article.id}/edit" %>
+    <p class='article_explanation'>あなたが就職を考え出した時からいままでにやってきたことを紹介しましょう。
+    </p>
+  </div>
+  </div>
+
+
+    <% end %>
+
   <div class='middle_content'>
     <% @articles.each do |article| %>
       <div class='message_box clearfix'>
@@ -23,11 +35,34 @@
         <li class='title2'>
         <a href='/articles/<%= article.id %>'><%= article.title %></a>
         </li><br>
-        <li class='text'>
-          <%= article.content%>
+        <li class='text text0'>
+          <%= article.content %>
         </li>
        </ul>
      </div>
+
+     <% article.comments.each do |comment| %>
+     <div class='profile clearfix'>
+        <%= image_tag comment.user.avatar, class: 'sample_image' %>
+      <ul class='message'>
+        <li class="name2">
+          <%= comment.user.nickname %>
+        </li>
+        <li class='job2'>
+          <%= comment.user.job %>
+        </li>
+      </ul>
+    </div>
+      <ul class='message_bottom2'>
+        <li class='text'>
+        <%= comment.content %>
+        </li>
+      </ul>
+      <% end %>
+
+
+     
+
     <% if user_signed_in? %>
     <div class='comment_form'>
       <%= form_for(@comment) do |f| %>

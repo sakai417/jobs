@@ -1,11 +1,6 @@
-  <div class='how_many_comment'>
-     <%= @comments.count %>件のコメント
-   </div>
-     <% @comments.each do |comment| %>
+
      <div class='profile clearfix'>
         <%= image_tag comment.user.avatar, class: 'sample_image' %>
-
-
       <ul class='message'>
         <li class="name2">
           <%= comment.user.nickname %>
@@ -20,7 +15,3 @@
         <%= comment.content %>
         </li>
       </ul>
-    
-
-      <% end %>
-

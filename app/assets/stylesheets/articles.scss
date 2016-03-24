@@ -185,6 +185,7 @@ h3 {
 
 .more{
   color: #9057FF;
+
 }
 
 .message_box {
@@ -194,8 +195,7 @@ h3 {
 
 .message_box6 {
   border-bottom: solid #bbb 1px;
-  height: 20em;
-  overflow: hidden
+
 }
 
 // .more_watch {
@@ -216,7 +216,7 @@ h3 {
 .message {
   margin-top: 10px;
   float: left;
-  width: 400px;
+  width: 340px;
   list-style: none;
   padding-left: 10px;
 
@@ -285,8 +285,8 @@ padding-left: 0;
 font-family: "Times New Roman";
 font-style: italic;
 font-weight: bold;
-padding-left: 50px;
-margin-left: 20px;
+padding-left: 42px;
+
 }
 
 
@@ -299,18 +299,9 @@ margin-left: 20px;
 .job3 {
   font-family: "Times New Roman";
   font-style: italic;
-padding-left: 68px;
+padding-left: 46px;
 }
 
-
-.text {
-  line-height: 24px;
-  width: 460px;
-}
-
-.message_bottom .text {
-  padding-left: 40px;
-}
 
 
 .sample_image2 {
@@ -414,6 +405,7 @@ h5 {
   border: 0;
   margin-top: 0;
   border-top: 1px solid #bbb;
+  width: 500px;
 }
 
 span{
@@ -543,9 +535,25 @@ margin-left: 5px;
   padding-left: 10px;
 }
 
-.comment_box {
-  border-bottom: 1px solid #bbb;
+
+.edit_nav {
+  float: right;
 }
+
+.edit_nav a {
+  color: #A16EFF;
+}
+
+
+.text0 {
+  line-height: 24px;
+  width: 460px;
+}
+
+.message_bottom .text0 {
+  padding-left: 40px;
+}
+
 
 
 footer {

@@ -54,6 +54,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'config'
 gem 'aws-sdk'
+gem 'jquery-turbolinks'
 
 group :production, :standing do
   gem 'rails_12factor'

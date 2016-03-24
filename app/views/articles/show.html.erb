@@ -20,12 +20,36 @@
           <%= @article.title %>
         </li><br><br>
 
-        <li class='text'>
+        <li class='text', class='text0'>
           <%= @article.content%><br><br><br>
         </li>
      </ul>
+     <div class='edit_nav'>
+      <%= link_to '編集', "/articles/#{@article.id}/edit", :method => :get, class: 'update_button' %>
+      <%= link_to '削除', "/articles/#{@article.id}/destroy", :method => :delete, class: 'delete_button' %>
+    </div>
    </div>
-  <%= render 'shared/comment' %>
+     <div class='how_many_comment'>
+     <%= @comments.count %>件のコメント
+   </div>
+     <% @comments.each do |comment| %>
+     <div class='profile clearfix'>
+        <%= image_tag comment.user.avatar, class: 'sample_image' %>
+      <ul class='message'>
+        <li class="name2">
+          <a href="/users/<%=@article.user.id %>"><%= comment.user.nickname %></a>
+        </li>
+        <li class='job2'>
+          <%= comment.user.job %>
+        </li>
+      </ul>
+    </div>
+      <ul class='message_bottom2'>
+        <li class='text'>
+        <%= comment.content %>
+        </li>
+      </ul>
+      <% end %>
 
       <div class='comment_form'>
       <%= form_for(@comment) do |f| %>
@@ -33,7 +57,6 @@
         'コメントを書く', size: "57x2", class: "content_input" %>
         <%= f.hidden_field :commentable_id, value: @article.id %>
         <%= f.hidden_field :commentable_type, value: "Article" %>
-
         <%= f.submit "コメントする", class: 'submit_button1' %>
         <% end %>
     </div>

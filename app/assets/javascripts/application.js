@@ -12,6 +12,29 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+
+$(function() {
+  var count = 300;
+  $('.text').each(function() {
+
+    var thisText = $(this).text();
+    var textLength = thisText.length;
+    if (textLength > count) {
+      var showText = thisText.substring(0, count);
+      var insertText = showText;
+      insertText += '<span class="omit">…</span>';
+
+
+      $(this).html(insertText);
+    };
+  });
+});
+
+
+

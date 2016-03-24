@@ -2,14 +2,11 @@
 
 <div class='contents'>
   <div class='middle_content'>
-
-
-
     <div class='message_box5 clearfix'>
         <%= image_tag @tweet.user.avatar, class: 'sample_image' %>
         <ul class='message2'>
-        <li class="name3">
-          <%= @tweet.user.nickname %>
+        <li class="name2">
+          <a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a>
         </li>
         <li class='job3'>
           <%= @tweet.user.job %>
@@ -22,12 +19,41 @@
         <li class='title_show'>
           <%= @tweet.title %>
         </li><br><br>
-        <li class='text'>
+        <li class='text', class='text0'>
           <%= @tweet.content%>
         </li>
      </ul>
+          <div class='edit_nav'>
+      <%= link_to '編集', "/tweets/#{@tweet.id}/edit", :method => :get, class: 'update_button' %>
+      <%= link_to '削除', "/tweets/#{@tweet.id}", :method => :delete, class: 'delete_button/destroy' %>
+    </div>
    </div>
-  <%= render 'shared/comment'%>
+     <div class='how_many_comment'>
+
+       <%= @comments.count %>件のコメント
+   </div>
+
+
+     <% @comments.each do |comment| %>
+     <div class='profile clearfix'>
+        <%= image_tag comment.user.avatar, class: 'sample_image' %>
+      <ul class='message'>
+        <li class="name2">
+          <a href="/users/<%=@tweet.user.id %>"><%= comment.user.nickname %></a>
+        </li>
+        <li class='job2'>
+          <%= comment.user.job %>
+        </li>
+      </ul>
+    </div>
+      <ul class='message_bottom2'>
+        <li class='text'>
+        <%= comment.content %>
+        </li>
+      </ul>
+      <% end %>
+
+
          <div class='comment_form'>
       <%= form_for(@comment) do |f| %>
         <%= f.text_area :content, placeholder: 

@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :redirect, only: [:edit]
 
   def index
-    @articles = Article.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @articles = Article.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @article = Article.find_by(user_id: current_user.id)
     @comment = Comment.new
   end
 
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     Article.create(create_params)
-
+    redirect_to :root
   end
   def show
     @article = Article.find(params[:id])
@@ -24,6 +25,7 @@ class ArticlesController < ApplicationController
   def destroy
     article = Article.find(params[:id])
     article.destroy
+    redirect_to :root
   end
 
   def edit
@@ -31,8 +33,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
     article = Article.find(params[:id])
     article.update(update_params)
+    redirect_to :root
   end
 
   def explanation

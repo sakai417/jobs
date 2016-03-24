@@ -11,28 +11,55 @@
 
   <div class='middle_content clearfix'>
   <%= image_tag @user.avatar, class: 'sample_image' %>
-    <div class='message_box3'>
+    <div class='message_box'>
+        <div class='plofile clearfix'>
+
       <ul class='message'>
-        <li class="name">
+        <li class="name2">
          <%= @user.nickname %>
         </li>
-        <li class='job'>
+        <li class='job2'>
           <%= @user.job %>
         </li>
       </ul>
     </div>
-    <hr class='hr2'>
+    </div>
 
-    <ul class='message1'>
+
+    <ul class='message_bottom'>
       <% @articles.each do |article| %>
-        <div class='message_box4'>
+
         <li class='title2'>
         <a href='/articles/<%= article.id %>'><%= article.title %></a>
         </li><br>
-        <li class='text'>
-          <%= article.content%>
+        <li class='text0'>
+          <%= article.content %>
         </li>
-       </div>
+        <br>
+
+        <% if article.comments.exists? %>
+          <hr class='hr2'>
+        <% end %>
+
+      <% article.comments.each do |comment| %>
+             <div class='profile1 clearfix'>
+                <%= image_tag comment.user.avatar, class: 'sample_image' %>
+              <ul class='message'>
+                <li class="name2">
+                  <%= comment.user.nickname %>
+                </li>
+                <li class='job2'>
+                  <%= comment.user.job %>
+                </li>
+              </ul>
+            </div>
+            <ul class='message_bottom2'>
+              <li class='text'>
+              <%= comment.content %>
+              </li>
+            </ul>
+      <% end %>
+
       <% end %>
     </ul>
 
@@ -43,9 +70,35 @@
         <a href='/tweets/<%= tweet.id %>'><%= tweet.title %></a>
         </li><br>
         <li class='text'>
-          <%= tweet.content%>
+          <%= tweet.content %>
         </li>
+        <br>
+
+        <% if tweet.comments.exists? %>
+          <hr class='hr2'>
+        <% end %>
+
        </div>
+
+         <% tweet.comments.each do |comment| %>
+     <div class='profile1 clearfix'>
+        <%= image_tag comment.user.avatar, class: 'sample_image' %>
+      <ul class='message'>
+        <li class="name2">
+          <%= comment.user.nickname %>
+        </li>
+        <li class='job2'>
+          <%= comment.user.job %>
+        </li>
+      </ul>
+    </div>
+      <ul class='message_bottom3'>
+        <li class='text'>
+        <%= comment.content %>
+        </li>
+      </ul>
+      <% end %>
+
       <% end %>
     </ul>
 
